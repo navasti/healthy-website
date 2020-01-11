@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +10,109 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <script src="https://kit.fontawesome.com/ea3e93cd21.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./styles/style.scss">
 </head>
+
 <body>
-    <h1>h1</h1>
+    <div id="mobile-menu">
+        <nav id="mobile-nav">
+            <a href="#">Diet</a>
+            <a href="#">Activity</a>
+            <a href="#">Psyche</a>
+            <a href="#">Contact</a>
+        </nav>
+    </div>
+    <section id="home">
+        <header id="header">
+            <div class="hamburger-menu">
+                <div class="bar bar1"></div>
+                <div class="bar bar2"></div>
+                <div class="bar bar3"></div>
+            </div>
+            <!--  DESKTOP
+            <nav id="desktop-nav">
+                <a href="#">Diet</a>
+                <a href="#">Activity</a>
+                <a href="#">Psyche</a>
+                <a href="#">Contact</a>
+            </nav>
+            <div id="logo">
+                <a href="#"><img src="./images/logo.svg" class="logo" alt="logo"></a>
+            </div>
+            -->
+        </header>
+        <h1>Let us help you take care of your health.</h1>
+        <h2>We're here to make your choice much easier, this important one.</h2>
+    </section>
+    <section id="diet">
+        <h2><span>D</span>iet is the first thing you should take care of.</h2>
+        <p>Poor nutrition is available for a very large number of diseases.
+            Inappropriate nutrition is the cause of a very large number of diseases
+            while good nutrition can keep you healthy without a lot of physical activity</p>
+        <h2>What to do?</h2>
+        <article class="vegan-section">
+            <img src="./images/vegetables.jpg" class="vegetables" alt="vegetables">
+            <div class="vegan-description">
+                <h3>Become a vegan</h3>
+                <p>The fact is that if you refuse the consumption of animal products along with soy and gluten, it will
+                    greatly improve your health.</p>
+            </div>
+        </article>
+    </section>
+    <section id="activity">
+        <h2><span>P</span>syhical activity is a great way to improve fitness, lose weight, de-stress and calm down.</h2>
+        <h2>What do we recommend to start with?</h2>
+        <article class="hiking-section">
+            <img src="./images/hiking.jpg" class="hiking" alt="hiking">
+            <div class="hiking-description">
+                <h3>Hiking</h3>
+                <p>Hiking provides contact with nature and fresh air. This very well affects our mood and harmony.
+                Hiking, like yoga, does not require any equipment and you can start practicing it right away</p>
+            </div>
+        </article>
+        <article class="yoga-section">
+            <img src="./images/yoga.jpg" class="yoga" alt="yoga">
+            <div class="yoga-description">
+                <h3>Yoga</h3>
+                <p>Yoga does not require any skills and you can start practicing it immediately. It helps to take care
+                of the balance, concentration and gymnastics.</p>
+            </div>
+        </article>
+    </section>
+    <section id="psyche">
+        <h2><span>W</span>e must not forget about a mind. If mind is healthy we have a good attitude and self-esteem and that allows us to do wonderful things. If it's not there's only deconcentration and chaos.</h2>
+        <h2>We present the easiest way to start working with your mind.</h2>
+        <article class="meditation-section">
+            <img src="./images/meditation.jpg" class="meditation" alt="meditation">
+            <div class="meditation-description">
+                <h3>Meditation</h3>
+                <p>Meditation is a state of relaxation and release from unwanted thoughts. All you need is 5 to 15 minutes a day to feel the difference in managing your own thoughts .</p>
+            </div>
+        </article>
+    </section>
+    <section id="contact">
+        <h2><span>I</span>f you need any help or just want to ask us about something feel free to use contact form below or contact us via social.</h2>
+        <form>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Type your name" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Type your email" required>
+            <label for="message">Message / Question</label>
+            <textarea name="message" id="message" rows="3" required></textarea>
+            <button>Send</button>
+        </form>
+    </section>
+    <footer>
+        <p>Where you can find us</p>
+        <div class="social-media">
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-pinterest-square"></i>
+            <i class="fab fa-facebook-square"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-google-plus-square"></i>
+        </div>
+    </footer>
     <script src="./scripts/index.js"></script>
 </body>
 </html>
