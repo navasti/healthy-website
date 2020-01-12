@@ -10,8 +10,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ea3e93cd21.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./styles/style.scss">
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 
 <body>
@@ -37,20 +38,26 @@
                 <a href="#">Psyche</a>
                 <a href="#">Contact</a>
             </nav>
+            
             <div id="logo">
-                <a href="#"><img src="./images/logo.svg" class="logo" alt="logo"></a>
-            </div>
-            -->
+                <a href="#">
+                    <img src="./images/logo 1.png" class="logo" alt="logo">
+                </a>
+            </div>-->
+            
         </header>
-        <h1>Let us help you take care of your health.</h1>
-        <h2>We're here to make your choice much easier, this important one.</h2>
+        <div class="starting-text">
+            <h1>Let us help you take care of your health.</h1>
+            <h2>We're here to make your choice much easier, this important one.</h2>
+        </div>
     </section>
     <section id="diet">
+        <span class="section-start-text">Diet</span>
         <h2><span>D</span>iet is the first thing you should take care of.</h2>
-        <p>Poor nutrition is available for a very large number of diseases.
+        <p class="centered">Poor nutrition is available for a very large number of diseases.
             Inappropriate nutrition is the cause of a very large number of diseases
-            while good nutrition can keep you healthy without a lot of physical activity</p>
-        <h2>What to do?</h2>
+            while good nutrition can keep you healthy without a lot of physical activity.</p>
+        <h2 class="centered">What to do?</h2>
         <article class="vegan-section">
             <img src="./images/vegetables.jpg" class="vegetables" alt="vegetables">
             <div class="vegan-description">
@@ -61,8 +68,9 @@
         </article>
     </section>
     <section id="activity">
+        <span class="section-start-text">Activity</span>
         <h2><span>P</span>syhical activity is a great way to improve fitness, lose weight, de-stress and calm down.</h2>
-        <h2>What do we recommend to start with?</h2>
+        <h2 class="centered">What do we recommend to start with?</h2>
         <article class="hiking-section">
             <img src="./images/hiking.jpg" class="hiking" alt="hiking">
             <div class="hiking-description">
@@ -81,8 +89,9 @@
         </article>
     </section>
     <section id="psyche">
+        <span class="section-start-text">Psyche</span>
         <h2><span>W</span>e must not forget about a mind. If mind is healthy we have a good attitude and self-esteem and that allows us to do wonderful things. If it's not there's only deconcentration and chaos.</h2>
-        <h2>We present the easiest way to start working with your mind.</h2>
+        <h2 class="centered">We present the easiest way to start working with your mind.</h2>
         <article class="meditation-section">
             <img src="./images/meditation.jpg" class="meditation" alt="meditation">
             <div class="meditation-description">
@@ -92,6 +101,7 @@
         </article>
     </section>
     <section id="contact">
+        <span class="section-start-text">Contact</span>
         <h2><span>I</span>f you need any help or just want to ask us about something feel free to use contact form below or contact us via social.</h2>
         <form>
             <label for="name">Name</label>
