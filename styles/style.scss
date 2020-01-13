@@ -1,30 +1,56 @@
 // global
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html{
+
+html {
     font-size: 10px;
-    body{
+    body {
         font-family: 'Montserrat', sans-serif;
-        img{width: 100%;}
-        a{text-decoration: none;}
-        section{
+        overflow-x: hidden;
+        img {
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        section {
             text-align: center;
             margin-top: 2rem;
-            line-height: 1.3; 
+            line-height: 1.3;
             letter-spacing: 1px;
-            h2{font-size: 2.4rem; padding: 1rem; text-align: justify;}
-            h3{font-size: 2.2rem; margin-top: 2rem;}
-            p{font-size: 1.8rem; padding: 2rem 1rem; text-align: justify;}
-            .centered{text-align: center;}
+
+            h2 {
+                font-size: 2.4rem;
+                padding: 1rem;
+                text-align: justify;
+            }
+
+            h3 {
+                font-size: 2.2rem;
+                margin-top: 2rem;
+            }
+
+            p {
+                font-size: 1.8rem;
+                padding: 2rem 1rem;
+                text-align: justify;
+            }
+
+            .centered {
+                text-align: center;
+            }
         }
     }
 }
 
 // multiple use
-.section-start-text{
+.section-start-text {
     display: inline-block;
     font-size: 3.8rem;
     margin: 2rem 0;
@@ -33,8 +59,9 @@ html{
     font-weight: bold;
     position: relative;
 }
+
 .section-start-text::before,
-.section-start-text::after{
+.section-start-text::after {
     content: "";
     position: absolute;
     height: 1px;
@@ -42,129 +69,489 @@ html{
     background-color: #222;
     top: calc(50% - .5px);
 }
-.section-start-text::before{left: 0%; transform: translateX(-110%);}
+
+.section-start-text::before {
+    left: 0%;
+    transform: translateX(-110%);
+}
+
 // multiple ends
+
+// loader
+
+#loader{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(41, 41, 41);
+    position: fixed;
+    z-index: 999;
+    .loading-spinner{
+        width: 10rem;
+        height: 10rem;
+        display: inline-block;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top-color: #fff;
+        margin-bottom: 10rem;
+        animation: spin 1s infinite ease-in-out;
+    }
+}
 
 
 // mobile menu
-#mobile-menu{
+#mobile-menu {
     position: absolute;
     transform: translateX(-100%);
     background-color: #000;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     height: 100vh;
     width: 100%;
     z-index: 99;
     transition: .3s ease;
-    #mobile-nav{
+
+    #mobile-nav {
         display: flex;
         flex-direction: column;
         align-items: center;
         position: absolute;
-        top:50%; left:50%; transform: translate(-50%,-50%);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         justify-content: center;
-        a{
-            color: #fff; 
-            font-size: 2.8rem; 
-            text-transform: uppercase; 
+
+        a {
+            color: #fff;
+            font-size: 2.8rem;
+            text-transform: uppercase;
             letter-spacing: 1px;
             padding: 1rem .5rem;
         }
     }
 }
-#mobile-menu.active{transform: translateX(0%);}
 
-// home
-#home{
-    height: 100vh;
-    margin-top: 0;
+#mobile-menu.active {
+    transform: translateX(0%);
+}
+
+#arrow{
+    display: none;
+}
+
+// header 
+#header {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    position: absolute;
+    top: 0; left: 0;
     width: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,.6) 0%, rgba(0, 0, 0, 0.6)100%),
-    url('../images/hero-mobile.jpg') no-repeat;
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    position: relative;
-    .starting-text{
-        position: absolute;
-        top: 50%; transform: translateY(-50%);
-        width: 100%; 
-        padding: 1rem;
-        h1{font-size: 4rem; margin-bottom: 3rem;}
-        h2{font-size: 2.6rem; line-height: 1.4; text-align: center;}
-    }
-    #header{
-        height: 10vh;
+    #desktop-nav,
+    #logo{display: none;}
+    .hamburger-menu {
+        height: 2rem;
+        width: 3rem;
         display: flex;
-        align-items: center;
-        padding: 1.5rem 2rem;
-        .hamburger-menu{
-            height: 2rem; width: 3rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-            z-index: 199;
-            cursor: pointer;
-            .bar{background-color: #fff; height: 4px; width: 100%; border-radius: 5px;}
-            .bar1{width: 50%;}
-            .bar3{width: 50%; align-self: flex-end;}
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        z-index: 199;
+        cursor: pointer;
+
+        .bar {
+            background-color: #fff;
+            height: 4px;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .bar1 {
+            width: 50%;
+        }
+
+        .bar3 {
+            width: 50%;
+            align-self: flex-end;
         }
     }
 }
 
+// home
+#home {
+    height: 100vh;
+    margin-top: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .6) 0%, rgba(0, 0, 0, 0.6)100%),
+        url('../images/hero-mobile.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    position: relative;
+
+    .starting-text {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        padding: 1rem;
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 2.6rem;
+            line-height: 1.4;
+            text-align: center;
+        }
+    }
+
+}
+
 // activity
-#activity{
-    h2:first-of-type{font-size: 2.5rem; }
-    h2{font-size: 2rem;}
+#activity {
+    h2:first-of-type {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
 }
 
 //psyche
-#psyche{
-    h2:first-of-type{font-size: 2.3rem; }
-    h2{font-size: 2rem;}
+#psyche {
+    h2:first-of-type {
+        font-size: 2.3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
 }
 
 //contact
-#contact{
-    form{
+#contact {
+    form {
         display: flex;
         flex-direction: column;
         margin: 2rem auto;
         width: 80%;
-        label{text-align: left; font-size: 2rem; padding: 1.5rem 0 .5rem 0;}
-        input, 
-        textarea{width: 100%; padding: 1.5rem 1rem;}
-        button{
-            margin: 1.5rem 0 2.5rem 0; 
-            padding: 1rem; 
-            text-transform: uppercase; 
-            letter-spacing: 1px; 
-            font-size: 1.6rem; 
-            background-color: #fff; 
-            border: 1px solid #000;
+
+        label {
+            text-align: left;
+            font-size: 2rem;
+            padding: 1.5rem 0 .5rem 0;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 1.5rem 1rem;
+        }
+
+        button {
+            margin: 1.5rem 0 2.5rem 0;
+            padding: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1.6rem;
+            background-color: #fff;
+            border: 1px solid #999;
+            color: #444;
+            width: 100%;
         }
     }
 }
 
 //footer
-footer{
+footer {
     height: 10vh;
-    background-color: #666;
+    background-color: rgba(0,0,0,.9);
     color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    p{font-size: 1.6rem; padding: .5rem;}
-    i{font-size: 2rem; padding: 0 .8rem .5rem .8rem}
+
+    p {
+        font-size: 1.6rem;
+        padding: .5rem;
+    }
+
+    i {
+        font-size: 2rem;
+        padding: 0 .8rem .5rem .8rem
+    }
 }
 
-@media (min-width: 1025px){
-    #home{
-        background: linear-gradient(to bottom, rgba(0,0,0,.5) 0%, rgba(0, 0, 0, 0.5)100%),
-        url('../images/hero.jpg') no-repeat;
+
+// media queries
+@media (min-width: 767px) {
+    .centered{}
+    #diet,
+    #activity,
+    #psyche,
+    #contact {
+        margin-top: 3rem;
+        h2 {
+            font-size: 3rem;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 2.8rem;
+        }
+
+        p {
+            font-size: 2.4rem;
+            padding: 2rem 1rem;
+        }
+    }
+    #activity,
+    #psyche{
+        h2:first-of-type{
+            font-size: 3rem;
+        }
+    }
+    #mobile-menu {
+        #mobile-nav {
+            a {
+                font-size: 4.2rem;
+            }
+        }
+    }
+
+    #home {
+        .starting-text {
+            h1 {
+                font-size: 5rem;
+            }
+
+            h2 {
+                font-size: 3.2rem;
+            }
+        }
+
+        #header {
+            .hamburger-menu {
+                width: 5rem;
+                height: 3.5rem;
+
+                .bar {
+                    height: 6px;
+                }
+            }
+        }
+    }
+
+    .section-start-text {
+        font-size: 4.8rem;
+    }
+    #contact {
+        form {
+            margin: 2rem auto;
+            width: 75%;
+    
+            label {
+                font-size: 2.6rem;
+                padding: 2rem 0 1rem 0;
+            }
+    
+            input,
+            textarea {
+                font-size: 1.8rem;
+            }
+    
+            button {
+                margin: 2rem 0 3rem 0;
+                font-size: 2.4rem;
+            }
+        }
+    }
+    footer{
+        height: 10vh;
+        p {font-size: 2rem; padding: .5rem;}
+    
+        i {
+            font-size: 2.6rem; 
+            padding: 0 1rem .5rem 1rem
+        }
+    }
+}
+
+@media (max-height: 700px){
+    footer{
+        height: 15vh;
+    }
+}
+
+// ipad pro
+@media (width: 1024px) and (height: 1366px){
+    footer{
+        height: 8vh;
+    }
+}
+
+//desktop
+@media (min-width: 1025px) {
+    #arrow{
+        display: none;
+        bottom: 2rem; 
+        right: 2rem;
+        z-index: 10;
+        width: 2.6rem;
+        height: 2.6rem;
+        border-radius: 50%;
+        border: 3px solid #fff;
+        background-color: #fff;
+        cursor: pointer;
+        i{
+            font-size: 2.4rem; 
+            color: #000;
+        }
+    }
+    #arrow.scrolled{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+    }
+    #diet,
+    #activity,
+    #psyche,
+    #contact{
+        h2{margin: 3rem;}
+        width: 80%;
+        margin: 5rem auto 7rem auto;
+        article{
+            display: flex;
+            align-items: center;
+            margin: 2rem 0;
+            img{
+                width: 50%;
+            }
+            h3{
+                text-align: left; 
+                padding: 0 3rem;
+            }
+            p{
+                padding: 0 3rem; 
+                font-size: 2rem;
+            }
+            div{
+                width: 50%;
+            }
+        }
+    }
+    #mobile-menu{
+        display:none;
+    }
+    #header{
+        justify-content: space-between;
+        z-index: 5;
+        .hamburger-menu{
+            display: none;
+        }
+        #desktop-nav{
+            display: block;
+            a{
+                font-size: 2.2rem;
+                text-transform: uppercase;
+                padding: 0 1rem;
+            }
+        }
+        #logo{
+            display: block;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            padding: .5rem;
+        }
+    }
+    #home {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0.5)100%),
+            url('../images/hero.jpg') no-repeat;
         background-size: cover;
         background-position: center;
+        .starting-text{
+            left: 0;
+            width: 60%;
+            padding: 1rem;
+            h1 {
+                font-size: 3.8rem;
+                padding: 1rem;
+                margin-bottom: 0;
+                text-align: left;
+            }
+            h2 {
+                font-size: 2.6rem;
+                text-align: left;
+            }
+        }
+    }
+    #activity{
+        .hiking-section{
+            margin-bottom: 0;
+        }
+        .yoga-section{
+            margin-top: 0;
+            flex-direction: row-reverse;
+            text-align: right;
+            h3{
+                text-align: right;
+            }
+        }
+    }
+   
+}
+
+@media (min-width: 1660px){
+    #diet,
+    #activity,
+    #psyche,
+    #contact{
+        width: 70%;
+        article{
+            p{
+                font-size: 2.6rem;
+            }
+        }
+    }
+    #home {
+        #header{
+            #desktop-nav{
+                a{
+                    font-size: 2.4rem;
+                }
+            }
+        }
+        .starting-text{
+            left: 1rem;
+            width: 60%;
+            padding: 1rem;
+            h1 {
+                font-size: 4.6rem;
+                padding: 1rem;
+                margin-bottom: 0;
+                text-align: left;
+            }
+            h2 {
+                font-size: 4rem;
+                text-align: left;
+            }
+        }
+    }
+
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
     }
 }

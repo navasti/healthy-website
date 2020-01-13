@@ -11,6 +11,7 @@ html {
 
 html body {
   font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
 }
 
 html body img {
@@ -19,6 +20,7 @@ html body img {
 
 html body a {
   text-decoration: none;
+  color: #fff;
 }
 
 html body section {
@@ -75,6 +77,35 @@ html body section .centered {
           transform: translateX(-110%);
 }
 
+#loader {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #292929;
+  position: fixed;
+  z-index: 999;
+}
+
+#loader .loading-spinner {
+  width: 10rem;
+  height: 10rem;
+  display: inline-block;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  margin-bottom: 10rem;
+  -webkit-animation: spin 1s infinite ease-in-out;
+          animation: spin 1s infinite ease-in-out;
+}
+
 #mobile-menu {
   position: absolute;
   -webkit-transform: translateX(-100%);
@@ -123,6 +154,65 @@ html body section .centered {
           transform: translateX(0%);
 }
 
+#arrow {
+  display: none;
+}
+
+#header {
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.5rem 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+#header #desktop-nav,
+#header #logo {
+  display: none;
+}
+
+#header .hamburger-menu {
+  height: 2rem;
+  width: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  z-index: 199;
+  cursor: pointer;
+}
+
+#header .hamburger-menu .bar {
+  background-color: #fff;
+  height: 4px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+#header .hamburger-menu .bar1 {
+  width: 50%;
+}
+
+#header .hamburger-menu .bar3 {
+  width: 50%;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
 #home {
   height: 100vh;
   margin-top: 0;
@@ -153,52 +243,6 @@ html body section .centered {
   font-size: 2.6rem;
   line-height: 1.4;
   text-align: center;
-}
-
-#home #header {
-  height: 10vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 1.5rem 2rem;
-}
-
-#home #header .hamburger-menu {
-  height: 2rem;
-  width: 3rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  position: relative;
-  z-index: 199;
-  cursor: pointer;
-}
-
-#home #header .hamburger-menu .bar {
-  background-color: #fff;
-  height: 4px;
-  width: 100%;
-  border-radius: 5px;
-}
-
-#home #header .hamburger-menu .bar1 {
-  width: 50%;
-}
-
-#home #header .hamburger-menu .bar3 {
-  width: 50%;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
 }
 
 #activity h2:first-of-type {
@@ -248,12 +292,14 @@ html body section .centered {
   letter-spacing: 1px;
   font-size: 1.6rem;
   background-color: #fff;
-  border: 1px solid #000;
+  border: 1px solid #999;
+  color: #444;
+  width: 100%;
 }
 
 footer {
   height: 10vh;
-  background-color: #666;
+  background-color: rgba(0, 0, 0, 0.9);
   color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -279,12 +325,285 @@ footer i {
   padding: 0 .8rem .5rem .8rem;
 }
 
+@media (min-width: 767px) {
+  #diet,
+  #activity,
+  #psyche,
+  #contact {
+    margin-top: 3rem;
+  }
+  #diet h2,
+  #activity h2,
+  #psyche h2,
+  #contact h2 {
+    font-size: 3rem;
+    padding: 1rem;
+    text-align: center;
+  }
+  #diet h3,
+  #activity h3,
+  #psyche h3,
+  #contact h3 {
+    font-size: 2.8rem;
+  }
+  #diet p,
+  #activity p,
+  #psyche p,
+  #contact p {
+    font-size: 2.4rem;
+    padding: 2rem 1rem;
+  }
+  #activity h2:first-of-type,
+  #psyche h2:first-of-type {
+    font-size: 3rem;
+  }
+  #mobile-menu #mobile-nav a {
+    font-size: 4.2rem;
+  }
+  #home .starting-text h1 {
+    font-size: 5rem;
+  }
+  #home .starting-text h2 {
+    font-size: 3.2rem;
+  }
+  #home #header .hamburger-menu {
+    width: 5rem;
+    height: 3.5rem;
+  }
+  #home #header .hamburger-menu .bar {
+    height: 6px;
+  }
+  .section-start-text {
+    font-size: 4.8rem;
+  }
+  #contact form {
+    margin: 2rem auto;
+    width: 75%;
+  }
+  #contact form label {
+    font-size: 2.6rem;
+    padding: 2rem 0 1rem 0;
+  }
+  #contact form input,
+  #contact form textarea {
+    font-size: 1.8rem;
+  }
+  #contact form button {
+    margin: 2rem 0 3rem 0;
+    font-size: 2.4rem;
+  }
+  footer {
+    height: 10vh;
+  }
+  footer p {
+    font-size: 2rem;
+    padding: .5rem;
+  }
+  footer i {
+    font-size: 2.6rem;
+    padding: 0 1rem .5rem 1rem;
+  }
+}
+
+@media (max-height: 700px) {
+  footer {
+    height: 15vh;
+  }
+}
+
+@media (width: 1024px) and (height: 1366px) {
+  footer {
+    height: 8vh;
+  }
+}
+
 @media (min-width: 1025px) {
+  #arrow {
+    display: none;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 10;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  #arrow i {
+    font-size: 2.4rem;
+    color: #000;
+  }
+  #arrow.scrolled {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: fixed;
+  }
+  #diet,
+  #activity,
+  #psyche,
+  #contact {
+    width: 80%;
+    margin: 5rem auto 7rem auto;
+  }
+  #diet h2,
+  #activity h2,
+  #psyche h2,
+  #contact h2 {
+    margin: 3rem;
+  }
+  #diet article,
+  #activity article,
+  #psyche article,
+  #contact article {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 2rem 0;
+  }
+  #diet article img,
+  #activity article img,
+  #psyche article img,
+  #contact article img {
+    width: 50%;
+  }
+  #diet article h3,
+  #activity article h3,
+  #psyche article h3,
+  #contact article h3 {
+    text-align: left;
+    padding: 0 3rem;
+  }
+  #diet article p,
+  #activity article p,
+  #psyche article p,
+  #contact article p {
+    padding: 0 3rem;
+    font-size: 2rem;
+  }
+  #diet article div,
+  #activity article div,
+  #psyche article div,
+  #contact article div {
+    width: 50%;
+  }
+  #mobile-menu {
+    display: none;
+  }
+  #header {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    z-index: 5;
+  }
+  #header .hamburger-menu {
+    display: none;
+  }
+  #header #desktop-nav {
+    display: block;
+  }
+  #header #desktop-nav a {
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    padding: 0 1rem;
+  }
+  #header #logo {
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    padding: .5rem;
+  }
   #home {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("../images/hero.jpg") no-repeat;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("../images/hero.jpg") no-repeat;
     background-size: cover;
     background-position: center;
+  }
+  #home .starting-text {
+    left: 0;
+    width: 60%;
+    padding: 1rem;
+  }
+  #home .starting-text h1 {
+    font-size: 3.8rem;
+    padding: 1rem;
+    margin-bottom: 0;
+    text-align: left;
+  }
+  #home .starting-text h2 {
+    font-size: 2.6rem;
+    text-align: left;
+  }
+  #activity .hiking-section {
+    margin-bottom: 0;
+  }
+  #activity .yoga-section {
+    margin-top: 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    text-align: right;
+  }
+  #activity .yoga-section h3 {
+    text-align: right;
+  }
+}
+
+@media (min-width: 1660px) {
+  #diet,
+  #activity,
+  #psyche,
+  #contact {
+    width: 70%;
+  }
+  #diet article p,
+  #activity article p,
+  #psyche article p,
+  #contact article p {
+    font-size: 2.6rem;
+  }
+  #home #header #desktop-nav a {
+    font-size: 2.4rem;
+  }
+  #home .starting-text {
+    left: 1rem;
+    width: 60%;
+    padding: 1rem;
+  }
+  #home .starting-text h1 {
+    font-size: 4.6rem;
+    padding: 1rem;
+    margin-bottom: 0;
+    text-align: left;
+  }
+  #home .starting-text h2 {
+    font-size: 4rem;
+    text-align: left;
+  }
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 /*# sourceMappingURL=style.css.map */
