@@ -295,6 +295,7 @@ html body section .centered {
   border: 1px solid #999;
   color: #444;
   width: 100%;
+  cursor: pointer;
 }
 
 footer {
@@ -323,6 +324,7 @@ footer p {
 footer i {
   font-size: 2rem;
   padding: 0 .8rem .5rem .8rem;
+  cursor: pointer;
 }
 
 @media (min-width: 767px) {

@@ -265,6 +265,7 @@ html {
             border: 1px solid #999;
             color: #444;
             width: 100%;
+            cursor: pointer;
         }
     }
 }
@@ -286,7 +287,8 @@ footer {
 
     i {
         font-size: 2rem;
-        padding: 0 .8rem .5rem .8rem
+        padding: 0 .8rem .5rem .8rem;
+        cursor: pointer;
     }
 }
 
