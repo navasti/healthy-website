@@ -1,14 +1,21 @@
-# Healthy lifestyle website
+## Healthy Website
+This project is a website which is focused on healthy lifestyle topic.
 
-This project is a single page website about topic which has recently become very popular - health.
-Written in html, scss, javascript (vanilla, some jQuery and gsap libary which handles animations on page).
-Designed and implemented according to the mobile first principle.
+## Preview
+https://navasti.github.io/healthy-website/
+
+## Getting Started
+All you need to run this project locally is open with browser index.html file or open the project folder in your text editor and use 'Open with Live Server' option.
+
+## Used Technologies
+* HTML
+* JavaScript
+* gsap library
+* FontAwesome Icons
+* SCSS - Mobile First Styles
 
 ## Sources
-Favicon - favicon.io
-
-Images - pexels.com & pixabay.com
-
-Icons - fontawesome.com
-
-Logo - iconmonstr.com
+Favicon - https://favicon.io/ \
+Logo - https://iconmonstr.com/ \
+Icons -  https://fontawesome.com/ \
+Images - https://www.pexels.com/ and https://pixabay.com/
